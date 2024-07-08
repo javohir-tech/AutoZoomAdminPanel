@@ -8,6 +8,7 @@ import Home from './Components/Home/Home'
 import Brands from './Components/Brends/Brands'
 import Categories from './Components/Categories/Categories'
 import { ToastContainer } from 'react-toastify'
+import Modals from './Components/Modals/Modals'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
       <Route index element={<Login/>} />
       <Route path='home' element={<Home/>} >
       <Route path='brands' element={<Brands/>} />
+      <Route path ='modals' element={<Modals/>} />
       <Route path='Categories' element={<Categories/>} />
       </Route>
      </Routes>

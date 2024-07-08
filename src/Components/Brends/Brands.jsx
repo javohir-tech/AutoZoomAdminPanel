@@ -55,7 +55,7 @@ export default function Brands() {
       })
   }
 
-  //get method 
+  //delete method 
 
   const [ochir, setOchir] = useState();
 
@@ -113,10 +113,6 @@ export default function Brands() {
       })
   }
 
-  console.log(bosil)
-
-
-
   // modal jsbosil
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = (id) => {
@@ -150,7 +146,7 @@ export default function Brands() {
             <tr key={index} onClick={() => setBOsil(true)}>
               <td>{item.title}</td>
               <td><img className='img' src={`${startText}${item.image_src}`} alt="brands images" /></td>
-              <td onClick={(e) => setOchir(item.id)}>
+              <td onClick={() => setOchir(item.id)}>
                 <span>
                   <Popconfirm
                     title="Delete the task"

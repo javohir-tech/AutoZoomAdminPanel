@@ -3,6 +3,7 @@ import {
   DingdingOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
+  UnorderedListOutlined,
   UploadOutlined,
   UserOutlined,
   VideoCameraOutlined,
@@ -42,6 +43,11 @@ export default function Home() {
               key: '3',
               icon: <DingdingOutlined />,
               label: <Link to={'brands'}>Brands</Link>
+            },
+            {
+              key: '4',
+              icon: <UnorderedListOutlined />,
+              label: <Link to={'modals'}>Modals</Link>
             },
           ]}
         />
