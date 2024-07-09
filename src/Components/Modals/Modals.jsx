@@ -91,7 +91,7 @@ export default function Modals() {
     //edit method put
     const [togirlash, setTogirlash] = useState(false);
     const [editIdOl, setEditIdOl] = useState();
-    const getEditData = Opkel?.filter((javohir)=>javohir.id===editIdOl)
+    const getEditData = Opkel?.filter((javohir) => javohir.id === editIdOl)
 
     const [editName, setEditName] = useState();
     const [editTitle, setEditTitle] = useState();
@@ -109,18 +109,18 @@ export default function Modals() {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
-            body:formData
+            body: formData
         })
             .then((res) => res.json())
             .then((edit) => {
-               if(edit.success===true){
-                getApi();
-                setIsModalOpen(false);
-                message.success(edit.message)
-               }
-               else{
-                message.error(edit.message)
-               }
+                if (edit.success === true) {
+                    getApi();
+                    setIsModalOpen(false);
+                    message.success(edit.message)
+                }
+                else {
+                    message.error(edit.message)
+                }
             })
     }
 
@@ -181,8 +181,8 @@ export default function Modals() {
                                         <Button danger type='primary'><DeleteOutlined /></Button>
                                     </Popconfirm>
                                 </span>
-                                <span onClick={()=>setTogirlash(true)}>
-                                    <Button type="primary" onClick={()=>showModal(item.id)}>
+                                <span onClick={() => setTogirlash(true)}>
+                                    <Button type="primary" onClick={() => showModal(item.id)}>
                                         <EditOutlined />
                                     </Button>
                                 </span>
@@ -196,7 +196,7 @@ export default function Modals() {
                     ?
                     <form>
                         <h1>Tahrirlash uchun</h1>
-                        <Input placeholder="Basic usage" defaultValue={getEditData[0]?.name}  onChange={(e) => setEditName(e.target.value)} className='modal_input' required />
+                        <Input placeholder="Basic usage" defaultValue={getEditData[0]?.name} onChange={(e) => setEditName(e.target.value)} className='modal_input' required />
                         <Form.Item >
                             <Select onChange={yangiHandleChange} className='modal_input' defaultValue={getEditData[0]?.brand_id} required>
                                 {brands.map((item, index) => (
@@ -210,7 +210,7 @@ export default function Modals() {
                     <form>
                         <h1>Qo'shish uchun</h1>
                         <Input placeholder="Basic usage" onChange={(e) => setName(e.target.value)} className='name_input' required />
-                        <Form.Item >
+                        <Form.Item>
                             <Select onChange={handleChange} className='modal_input' required>
                                 {brands.map((item, index) => (
                                     <Select.Option value={item.id} key={index}>{item.title}</Select.Option>
