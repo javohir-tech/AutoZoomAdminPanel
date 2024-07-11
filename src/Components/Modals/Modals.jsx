@@ -209,7 +209,7 @@ export default function Modals() {
                     :
                     <form>
                         <h1>Qo'shish uchun</h1>
-                        <Input placeholder="Basic usage" onChange={(e) => setName(e.target.value)} className='name_input' required />
+                        <Input placeholder="Basic usage" onChange={(e) => setName(e.target.value)} className='modal_input' required />
                         <Form.Item>
                             <Select onChange={handleChange} className='modal_input' required>
                                 {brands.map((item, index) => (

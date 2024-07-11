@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, message, Modal, Popconfirm } from 'antd';
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
+import './Brands.css'
 
 export default function Brands() {
   // url 
@@ -159,7 +160,7 @@ export default function Brands() {
                   </Popconfirm>
                 </span>
                 <span>
-                  <Button type="primary" onClick={()=>showModal(item.id)} >
+                  <Button type="primary" onClick={() => showModal(item.id)} >
                     <EditOutlined />
                   </Button>
                 </span>
@@ -168,21 +169,21 @@ export default function Brands() {
           ))}
         </tbody>
       </table>
-      <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>{
+      <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={''}>{
         bosil === true
           ?
           <form>
             <h1>Tahrirlash uchun </h1>
-            <input onChange={(e) =>setEditName(e.target.value)} defaultValue={getEditData[0]?.title} type="text" placeholder='name' required />
-            <input type="file" onChange={(e) => setEditImage(e.target.files[0])} required />
-            <button onClick={putButton}>edit</button>
+            <input className='brands_input' onChange={(e) => setEditName(e.target.value)} defaultValue={getEditData[0]?.title} type="text" placeholder='name' required />
+            <input className='brands_input' type="file" onChange={(e) => setEditImage(e.target.files[0])} required />
+            <Button type='primary' onClick={putButton}>Edit</Button>
           </form>
           :
           <form>
             <h1>Qoshish uchun</h1>
-            <input onChange={(e) => setName(e.target.value)} type="text" placeholder='name' required />
-            <input type="file" onChange={(e) => setImage(e.target.files[0])} required />
-            <button onClick={Yubor}>Jo'nat </button>
+            <input className='brands_input' onChange={(e) => setName(e.target.value)} type="text" placeholder='name' required />
+            <input className='brands_input' type="file" onChange={(e) => setImage(e.target.files[0])} required />
+            <Button type='primary' onClick={Yubor}>Edit</Button>
           </form>}
       </Modal>
     </div>

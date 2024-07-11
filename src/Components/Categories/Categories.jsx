@@ -177,23 +177,23 @@ export default function Categories() {
         </tbody>
 
       </table>
-      <Modal title="Basic Modals" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>{
+      <Modal title="Basic Modals" open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={''}>{
         bosil === true
           ?
           <form>
             <h1>Tahrirlash uchun</h1>
-            <input onChange={(e) => setEditNameEn(e.target.value)} type="text" defaultValue={getData[0]?.name_en} placeholder='nameEn' required />
-            <input onChange={(e) => setEditNameRu(e.target.value)} type="text" defaultValue={getData[0]?.name_ru} placeholder='nameRu' required />
-            <input onChange={(e) => setEditArt(e.target.files[0])} type="file" accept='images/*' />
-            <button onClick={tahrirla}>Tahrirla</button>
+            <input onChange={(e) => setEditNameEn(e.target.value)} type="text" defaultValue={getData[0]?.name_en} placeholder='nameEn' className='categoties_input' required />
+            <input onChange={(e) => setEditNameRu(e.target.value)} type="text" defaultValue={getData[0]?.name_ru} placeholder='nameRu' className='categoties_input' required />
+            <input onChange={(e) => setEditArt(e.target.files[0])} type="file" className='categoties_input' accept='images/*' />
+            <Button type='primary' onClick={tahrirla}>Tahrirla</Button>
           </form>
           :
           <form>
             <h1>Qoshish uchun</h1>
-            <input onChange={(e) => setNameEn(e.target.value)} type="text" placeholder='nameEn' required />
-            <input onChange={(e) => setNameRu(e.target.value)} type="text" placeholder='nameRu' required />
-            <input onChange={(e) => setArt(e.target.files[0])} type="file" accept='images/*' />
-            <button onClick={Suvonov}>qoshilsin</button>
+            <input onChange={(e) => setNameEn(e.target.value)} type="text" placeholder='nameEn' className='categoties_input' required />
+            <input onChange={(e) => setNameRu(e.target.value)} type="text" placeholder='nameRu' className='categoties_input' required />
+            <input onChange={(e) => setArt(e.target.files[0])} type="file" className='categoties_input' accept='images/*' />
+            <Button type='primary' onClick={Suvonov}>qoshilsin</Button>
           </form>
       }
 
